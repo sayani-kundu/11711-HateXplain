@@ -10,7 +10,7 @@
 
 Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 
-### :tada: :tada: In this repository, we attempt to replicate the results for the following paper: :tada: :tada:.
+### In this repository, we attempt to replicate the results for the following paper: 
 
 Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". Accepted at AAAI 2021.
 
