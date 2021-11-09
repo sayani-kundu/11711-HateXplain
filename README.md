@@ -35,7 +35,7 @@ Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 ------------------------------------------
 ***Saved Models*** 
 ------------------------------------------
-Due to the large size of the saved models folder, we have shared a drive link to access the same [here] "https://drive.google.com/drive/folders/1_PVUHwvY7EHoc_w9Ebqg1dgh9R9e2p87?usp=sharing". The folder structure is as follows:
+Due to the large size of the saved models folder, we have shared a drive link to access the same "[here] (https://drive.google.com/drive/folders/1_PVUHwvY7EHoc_w9Ebqg1dgh9R9e2p87?usp=sharing)". The folder structure is as follows:
 ```
 Saved
 └── bert-base-uncased_11_6_3_0.001
