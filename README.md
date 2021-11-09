@@ -15,8 +15,19 @@ Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". 
 <!-- Please follow this [link] "" for the repo to the main paper.  -->
 
-# Important Files for the Assignment
+------------------------------------------
+***Folder Description*** :open_file_folder:	
+------------------------------------------
+~~~
 
+./Data                            --> Contains the dataset related files.
+./Models                          --> Contains the codes for all the classifiers used
+./Preprocess  	                  --> Contains the codes for preprocessing the dataset	
+./best_model_json                 --> Contains the parameter values for the best models
+./Experiments.ipynb               --> Contains the codes for all the metrics (performance, bias and Explainability) using BERT
+./model_explain_output_100.json   --> The explainability output log file for lambda = 100 (attention constant)
+./model_explain_output_0point001.json   --> The explainability output log file for lambda = 0.001 (attention constant)
+~~~
 
 
 # Abstract
@@ -27,18 +38,6 @@ Hate speech is a challenging issue plaguing the online social media. While bette
 
 <p align="center"><img src="Figures/dataset_example.png" width="350" height="300"></p>
 
-
-------------------------------------------
-***Folder Description*** :open_file_folder:	
-------------------------------------------
-~~~
-
-./Data                --> Contains the dataset related files.
-./Models              --> Contains the codes for all the classifiers used
-./Preprocess  	      --> Contains the codes for preprocessing the dataset	
-./best_model_json     --> Contains the parameter values for the best models
-
-~~~
 ------------------------------------------
 ***Table of contents*** :bookmark_tabs:
 ------------------------------------------
