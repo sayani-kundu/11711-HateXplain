@@ -81,7 +81,9 @@ please setup the **Dataset** first (more important if your using non-bert model)
 ~~~
 pip install -r requirements.txt
 ~~~
-#### Training
+------------------------------------------
+***Training*** 
+------------------------------------------
 To train the model use the following command.
 ~~~
 usage: manual_training_inference.py [-h]
@@ -102,7 +104,9 @@ You can either set the parameters present in the python file, option will be (--
 * **For transformer models** :-The repository current supports the model having similar tokenization as [BERT](https://huggingface.co/transformers/model_doc/bert.html). In the params set `bert_tokens` to True and `path_files` to any of BERT based models in [Huggingface](https://huggingface.co/). 
 * **For non-transformer models** :-The repository current supports the LSTM, LSTM attention and CNN GRU models. In the params set `bert_tokens` to False and model name according to **Parameters** section (either birnn, birnnatt, birnnscrat, cnn_gru).
 
-#### Bias Calculation Script
+------------------------------------------
+***Bias Cauculation Script*** 
+------------------------------------------
 ~~~
 from manual_training_inference import *
 
@@ -150,7 +154,9 @@ train_model(params,device)
 
 ~~~
 
-### Explainability Calculation Script
+------------------------------------------
+***Explainability Calculation Script*** 
+------------------------------------------
 
 
 
