@@ -73,7 +73,7 @@ Explainability
 ------------------------------------------
 ***Usage instructions*** 
 ------------------------------------------
-Please setup the **Dataset** first. Install the corresponding version of tensorflow (listed below) to avoid version conflicts. Next, install the required libraries using the following command (preferably inside an environent)
+Install the corresponding version of tensorflow (listed below) to avoid version conflicts. Next, install the required libraries using the following command (preferably inside an environent)
 
 ~~~
 pip install tensorflow==2.4.0
@@ -99,10 +99,6 @@ positional arguments:
   --attention_lambda  required to assign the contribution of the atention loss
 
 ~~~
-
-You can either set the parameters present in the python file, option will be (--use_from_file set to True). To change the parameters, check the **Parameters** section for more details. The code will run on CPU by default. The recommended way will be to copy one of the dictionary in `best_model_json` and change it accordingly.
-
-* **For transformer models** :-The repository current supports the model having similar tokenization as [BERT](https://huggingface.co/transformers/model_doc/bert.html). In the params set `bert_tokens` to True and `path_files` to any of BERT based models in [Huggingface](https://huggingface.co/). 
 
 ------------------------------------------
 ***Bias Calculation*** 
