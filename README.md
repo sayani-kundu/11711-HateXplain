@@ -74,7 +74,58 @@ You can either set the parameters present in the python file, option will be (--
 * **For transformer models** :-The repository current supports the model having similar tokenization as [BERT](https://huggingface.co/transformers/model_doc/bert.html). In the params set `bert_tokens` to True and `path_files` to any of BERT based models in [Huggingface](https://huggingface.co/). 
 * **For non-transformer models** :-The repository current supports the LSTM, LSTM attention and CNN GRU models. In the params set `bert_tokens` to False and model name according to **Parameters** section (either birnn, birnnatt, birnnscrat, cnn_gru).
 
-For more details about the end to end pipleline visit [our_demo](https://github.com/punyajoy/HateXplain/blob/master/Example_HateExplain.ipynb)
+#### Bias Calculation Script
+~~~
+from manual_training_inference import *
+
+path_file='best_model_json/bestModel_bert_base_uncased_Attn_train_TRUE.json'
+with open(path_file,mode='r') as f:
+    params = json.load(f)
+for key in params:
+    if params[key] == 'True':
+          params[key]=True
+    elif params[key] == 'False':
+          params[key]=False
+    if( key in ['batch_size','num_classes','hidden_size','supervised_layer_pos','num_supervised_heads','random_seed','max_length']):
+        if(params[key]!='N/A'):
+            params[key]=int(params[key])
+        
+    if((key == 'weights') and (params['auto_weights']==False)):
+        params[key] = ast.literal_eval(params[key])
+
+##### change in logging to output the results to neptune
+params['logging']='local'
+params['device']='cuda'
+params['best_params']=False
+
+if torch.cuda.is_available() and params['device']=='cuda':    
+    # Tell PyTorch to use the GPU.    
+    device = torch.device("cuda")
+else:
+    print('Since you dont want to use GPU, using the CPU instead.')
+    device = torch.device("cpu")
+    
+    
+#### Few handy keys that you can directly change.
+params['variance']=1
+params['epochs']=5
+params['to_save']=True
+params['num_classes']=2
+params['data_file']=dict_data_folder[str(params['num_classes'])]['data_file']
+params['class_names']=dict_data_folder[str(params['num_classes'])]['class_label']
+if(params['num_classes']==2 and (params['auto_weights']==False)):
+      params['weights']=[1.0,1.0]
+        
+#for att_lambda in [0.001,0.01,0.1,1,10,100]
+params['att_lambda']=1
+train_model(params,device)
+
+~~~
+
+### Explainability Calculation Script
+
+
+
 
 ### Blogs and github repos which we used for reference :angel:
 1. For finetuning BERT this [blog](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)  by Chris McCormick is used and we also referred [Transformers github repo](https://github.com/huggingface/transformers).
