@@ -29,6 +29,42 @@ Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and A
 ./model_explain_output_0point001.json   --> The explainability output log file for lambda = 0.001 (attention constant)
 ~~~
 
+------------------------------------------
+***Saved Models*** 
+------------------------------------------
+Due to the large size of the saved models folder, we have shared a drive link to access the same [here] "". The folder structure is as follows:
+```
+src
+└── bert-base-uncased_11_6_3_0.001
+       ├── config.json
+       ├── pytorch_model.bin
+       ├── special_tokens_map.json  
+       ├── tokenizer_config.json
+       └── vocab.txt
+       
+       
+└── bert-base-uncased_11_6_3_1
+       ├── config.json
+       ├── pytorch_model.bin
+       ├── special_tokens_map.json  
+       ├── tokenizer_config.json
+       └── vocab.txt    
+       
+└── bert-base-uncased_11_6_3_10
+       ├── config.json
+       ├── pytorch_model.bin
+       ├── special_tokens_map.json  
+       ├── tokenizer_config.json
+       └── vocab.txt     
+       
+└── bert-base-uncased_11_6_3_100
+       ├── config.json
+       ├── pytorch_model.bin
+       ├── special_tokens_map.json  
+       ├── tokenizer_config.json
+       └── vocab.txt 
+```
+
 
 # Abstract
 
