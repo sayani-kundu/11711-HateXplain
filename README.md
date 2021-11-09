@@ -7,6 +7,17 @@ Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". 
 <!-- Please follow this [link] "" for the repo to the main paper.  -->
 
+
+------------------------------------------
+***Our Contributions*** 
+------------------------------------------
+
+~~~
+./Experiments.ipynb                     --> Contains the codes for training, evaluation and all the metrics calculations (performance, bias and Explainability) using BERT. There are markdowns for each section in the notebook.
+./evaluation_test.py                    --> Contains the code for evaluating the saved models on the test set.
+./Data Analysis.ipynb                   --> Contains the code for generating the histograms and confusion matrix for the best model.
+~~~
+
 ------------------------------------------
 ***Folder and File Description*** :open_file_folder:	
 ------------------------------------------
@@ -58,16 +69,6 @@ Explainability
      ├── Plausibility - IOU F1, Token F1 and AUPRC.
      └── Faithfulness - Comprehensiveness and Sufficiency.
 ```
-
-------------------------------------------
-***Our Contributions*** 
-------------------------------------------
-
-~~~
-./Experiments.ipynb                     --> Contains the codes for all the metrics (performance, bias and Explainability) using BERT.
-./evaluation_test.py                    --> Contains the code for evaluating the saved models on the test set.
-./Data Analysis.ipynb                   --> Contains the code for generating the plots and confusion matrix.
-~~~
 
 
 ------------------------------------------
