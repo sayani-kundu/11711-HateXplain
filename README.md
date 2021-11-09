@@ -108,16 +108,27 @@ You can either set the parameters present in the python file, option will be (--
 ------------------------------------------
 ***Bias Calculation*** 
 ------------------------------------------
+We convert the task into a binary classification problem by grouping the 3 labels into two groups as follows:
 
+```
+1. **hate speech** and **offensive**  - Toxic
+2. **Normal** - Normal
+```
+The following script can be used to run evaluation for bias calculation (unintended bias towards a target community)
 
+```
+python testing_for_bias.py bert_supervised 0.001
+```
 
 ------------------------------------------
 ***Explainability calculation*** 
 ------------------------------------------
+The Explainability aspect of the model is an indicator of how convincing the text is to a human interpretor (plausibility) and the reasoning capability (faithfulness)
+The following script can be used to run evaluation for Explainability calculation (unintended bias towards a target community)
+
+```
+python testing_for_rational.py bert_supervised 0.001
+```
 
 
-
-------------------------------------------
-***Future Work for Assignment 4*** 
-------------------------------------------
-- [ ] Add other Transformers model to the pipeline.
+The value of lambda (attention constant) is mentioned as the last argument. For both Bias and Explainability, we have tested for different values of lambda such as 0.001, 1, 10 and 100.
