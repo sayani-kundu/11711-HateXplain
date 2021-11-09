@@ -6,13 +6,14 @@
 [![Generic badge](https://img.shields.io/badge/Models-Hatexplain-blue.svg)](https://huggingface.co/models?search=hatexplain)
 
 
-# :mag_right: 11711 Assignment 3 : HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection 
+# 11711 Assignment 3 : HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection 
 
 Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 
 ### In this repository, we attempt to replicate the results for the following paper: 
 
-Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". Accepted at AAAI 2021.
+Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". 
+<!-- Please follow this [link] "" for the repo to the main paper.  -->
 
 # Abstract
 
@@ -22,17 +23,6 @@ Hate speech is a challenging issue plaguing the online social media. While bette
 
 <p align="center"><img src="Figures/dataset_example.png" width="350" height="300"></p>
 
-**Please cite our paper in any published work that uses any of these resources.**
-
-~~~bibtex
-@article{mathew2020hatexplain,
-  title={HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection},
-  author={Mathew, Binny and Saha, Punyajoy and Yimam, Seid Muhie and Biemann, Chris and Goyal, Pawan and Mukherjee, Animesh},
-  journal={arXiv preprint arXiv:2012.10289},
-  year={2020}
-}
-
-~~~
 
 ------------------------------------------
 ***Folder Description*** :open_file_folder:	
@@ -89,12 +79,5 @@ For more details about the end to end pipleline visit [our_demo](https://github.
 3. For Evaluation using the Explanantion metrics we used the ERASER benchmark [repo](https://github.com/jayded/eraserbenchmark). Please look into their repo and paper for more details.
 
 
-### Todos
-- [x] Add arxiv paper link and description.
-- [ ] Release better documentation for Models and Preprocess sections.
+### Future Work
 - [ ] Add other Transformers model to the pipeline.
-- [x] Upload our model to [transformers community](https://huggingface.co/models) to make them public
-- [x] Create an interface for **social scientists** where they can use our models easily with their data
-
-
-#####  :thumbsup: The repo is still in active developements. Feel free to create an [issue](https://github.com/punyajoy/HateXplain/issues) !!  :thumbsup:
