@@ -104,7 +104,7 @@ You can either set the parameters present in the python file, option will be (--
 * **For transformer models** :-The repository current supports the model having similar tokenization as [BERT](https://huggingface.co/transformers/model_doc/bert.html). In the params set `bert_tokens` to True and `path_files` to any of BERT based models in [Huggingface](https://huggingface.co/). 
 
 ------------------------------------------
-***Bias Cauculation Script*** 
+***Bias Calculation Script*** 
 ------------------------------------------
 ~~~
 from manual_training_inference import *
