@@ -16,16 +16,16 @@ Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and A
 <!-- Please follow this [link] "" for the repo to the main paper.  -->
 
 ------------------------------------------
-***Folder Description*** :open_file_folder:	
+***Folder and File Description*** :open_file_folder:	
 ------------------------------------------
 ~~~
 
-./Data                            --> Contains the dataset related files.
-./Models                          --> Contains the codes for all the classifiers used
-./Preprocess  	                  --> Contains the codes for preprocessing the dataset	
-./best_model_json                 --> Contains the parameter values for the best models
-./Experiments.ipynb               --> Contains the codes for all the metrics (performance, bias and Explainability) using BERT
-./model_explain_output_100.json   --> The explainability output log file for lambda = 100 (attention constant)
+./Data                                  --> Contains the dataset related files.
+./Models                                --> Contains the codes for all the classifiers used
+./Preprocess  	                        --> Contains the codes for preprocessing the dataset	
+./best_model_json                       --> Contains the parameter values for the best models
+./Experiments.ipynb                     --> Contains the codes for all the metrics (performance, bias and Explainability) using BERT
+./model_explain_output_100.json         --> The explainability output log file for lambda = 100 (attention constant)
 ./model_explain_output_0point001.json   --> The explainability output log file for lambda = 0.001 (attention constant)
 ~~~
 
