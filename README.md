@@ -10,7 +10,7 @@
 
 ### :tada: :tada: BERT for detecting abusive language(Hate speech+offensive) and predicting rationales is uploaded [here](https://huggingface.co/Hate-speech-CNERG/bert-base-uncased-hatexplain-rationale-two). Be sure to check it out :tada: :tada:.
 
-#### For more details about our paper
+In this repository, we attempt to replicate the results for the following paper:
 
 Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". Accepted at AAAI 2021.
 
