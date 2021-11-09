@@ -77,7 +77,7 @@ Hate speech is a challenging issue plaguing the online social media. While bette
 ------------------------------------------
 ***Usage instructions*** 
 ------------------------------------------
-please setup the **Dataset** first (more important if your using non-bert model). Install the libraries using the following command (preferably inside an environemt)
+please setup the **Dataset** first. Install the libraries using the following command (preferably inside an environemt)
 ~~~
 pip install -r requirements.txt
 ~~~
@@ -159,12 +159,7 @@ train_model(params,device)
 
 
 
-
-### Blogs and github repos which we used for reference :angel:
-1. For finetuning BERT this [blog](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)  by Chris McCormick is used and we also referred [Transformers github repo](https://github.com/huggingface/transformers).
-2. For CNN-GRU model we used the original [repo](https://github.com/ziqizhang/chase) for reference.
-3. For Evaluation using the Explanantion metrics we used the ERASER benchmark [repo](https://github.com/jayded/eraserbenchmark). Please look into their repo and paper for more details.
-
-
-### Future Work
+------------------------------------------
+***Future Work for Assignment 4*** 
+------------------------------------------
 - [ ] Add other Transformers model to the pipeline.
