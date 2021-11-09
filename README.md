@@ -6,7 +6,9 @@
 [![Generic badge](https://img.shields.io/badge/Models-Hatexplain-blue.svg)](https://huggingface.co/models?search=hatexplain)
 
 
-# :mag_right: HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection [Accepted at AAAI 2021]
+# :mag_right: 11711 Assignment 3 : HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection 
+
+Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 
 ### :tada: :tada: BERT for detecting abusive language(Hate speech+offensive) and predicting rationales is uploaded [here](https://huggingface.co/Hate-speech-CNERG/bert-base-uncased-hatexplain-rationale-two). Be sure to check it out :tada: :tada:.
 
