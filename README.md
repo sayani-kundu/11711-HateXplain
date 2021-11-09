@@ -59,7 +59,14 @@ Saved
 ------------------------------------------
 ***Types of Experiments*** 
 ------------------------------------------
-Performance - We obtained and compared metrics such as 
+We report three types of metrics for the BERT model:
+
+Performance - Accuracy, F1 score and AUROC.
+Bias        - GMB-Subgroup-AUC, GMB-BPSN-AUC and GMB-BNSP-AUC.
+Explainability
+     ├── Plausibility - IOU F1, Token F1 and AUPRC.
+     └── Faithfulness - Comprehensiveness and Sufficiency.
+     
 
 # Abstract
 
