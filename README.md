@@ -102,7 +102,6 @@ positional arguments:
 You can either set the parameters present in the python file, option will be (--use_from_file set to True). To change the parameters, check the **Parameters** section for more details. The code will run on CPU by default. The recommended way will be to copy one of the dictionary in `best_model_json` and change it accordingly.
 
 * **For transformer models** :-The repository current supports the model having similar tokenization as [BERT](https://huggingface.co/transformers/model_doc/bert.html). In the params set `bert_tokens` to True and `path_files` to any of BERT based models in [Huggingface](https://huggingface.co/). 
-* **For non-transformer models** :-The repository current supports the LSTM, LSTM attention and CNN GRU models. In the params set `bert_tokens` to False and model name according to **Parameters** section (either birnn, birnnatt, birnnscrat, cnn_gru).
 
 ------------------------------------------
 ***Bias Cauculation Script*** 
