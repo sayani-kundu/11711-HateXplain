@@ -34,7 +34,7 @@ Binny Mathew, Punyajoy Saha, Seid Muhie Yimam, Chris Biemann, Pawan Goyal, and A
 ------------------------------------------
 Due to the large size of the saved models folder, we have shared a drive link to access the same [here] "". The folder structure is as follows:
 ```
-src
+Saved
 └── bert-base-uncased_11_6_3_0.001
        ├── config.json
        ├── pytorch_model.bin
