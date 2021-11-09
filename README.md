@@ -77,8 +77,9 @@ Hate speech is a challenging issue plaguing the online social media. While bette
 ------------------------------------------
 ***Usage instructions*** 
 ------------------------------------------
-please setup the **Dataset** first. Install the libraries using the following command (preferably inside an environemt)
+Please setup the **Dataset** first. Install the corresponding version of tensorflow (listed below) to avoid version conflicts. Next, install the required libraries using the following command (preferably inside an environemt)
 ~~~
+pip install tensorflow==2.4.0
 pip install -r requirements.txt
 ~~~
 ------------------------------------------
