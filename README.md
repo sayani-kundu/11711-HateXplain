@@ -14,7 +14,7 @@ Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 
 ./Data                                  --> Contains the dataset related files.
 ./Models                                --> Contains the codes for all the classifiers used
-./Preprocess  	                        --> Contains the codes for preprocessing the dataset	
+./Preprocess  	                   --> Contains the codes for preprocessing the dataset	
 ./best_model_json                       --> Contains the parameter values for the best models
 ./Experiments.ipynb                     --> Contains the codes for all the metrics (performance, bias and Explainability) using BERT
 ./model_explain_output_100.json         --> The explainability output log file for lambda = 100 (attention constant)
@@ -56,7 +56,10 @@ Saved
        ├── tokenizer_config.json
        └── vocab.txt 
 ```
-
+------------------------------------------
+***Types of Experiments*** 
+------------------------------------------
+Performance - We obtained and compared metrics such as 
 
 # Abstract
 
@@ -107,52 +110,8 @@ You can either set the parameters present in the python file, option will be (--
 ------------------------------------------
 ***Bias Calculation Script*** 
 ------------------------------------------
-~~~
-from manual_training_inference import *
 
-path_file='best_model_json/bestModel_bert_base_uncased_Attn_train_TRUE.json'
-with open(path_file,mode='r') as f:
-    params = json.load(f)
-for key in params:
-    if params[key] == 'True':
-          params[key]=True
-    elif params[key] == 'False':
-          params[key]=False
-    if( key in ['batch_size','num_classes','hidden_size','supervised_layer_pos','num_supervised_heads','random_seed','max_length']):
-        if(params[key]!='N/A'):
-            params[key]=int(params[key])
-        
-    if((key == 'weights') and (params['auto_weights']==False)):
-        params[key] = ast.literal_eval(params[key])
 
-##### change in logging to output the results to neptune
-params['logging']='local'
-params['device']='cuda'
-params['best_params']=False
-
-if torch.cuda.is_available() and params['device']=='cuda':    
-    # Tell PyTorch to use the GPU.    
-    device = torch.device("cuda")
-else:
-    print('Since you dont want to use GPU, using the CPU instead.')
-    device = torch.device("cpu")
-    
-    
-#### Few handy keys that you can directly change.
-params['variance']=1
-params['epochs']=5
-params['to_save']=True
-params['num_classes']=2
-params['data_file']=dict_data_folder[str(params['num_classes'])]['data_file']
-params['class_names']=dict_data_folder[str(params['num_classes'])]['class_label']
-if(params['num_classes']==2 and (params['auto_weights']==False)):
-      params['weights']=[1.0,1.0]
-        
-#for att_lambda in [0.001,0.01,0.1,1,10,100]
-params['att_lambda']=1
-train_model(params,device)
-
-~~~
 
 ------------------------------------------
 ***Explainability Calculation Script*** 
