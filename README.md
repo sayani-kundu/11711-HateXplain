@@ -36,25 +36,13 @@ Saved
        
        
 └── bert-base-uncased_11_6_3_1
-       ├── config.json
-       ├── pytorch_model.bin
-       ├── special_tokens_map.json  
-       ├── tokenizer_config.json
-       └── vocab.txt    
+       ├── ...   
        
 └── bert-base-uncased_11_6_3_10
-       ├── config.json
-       ├── pytorch_model.bin
-       ├── special_tokens_map.json  
-       ├── tokenizer_config.json
-       └── vocab.txt     
+       ├── ...     
        
 └── bert-base-uncased_11_6_3_100
-       ├── config.json
-       ├── pytorch_model.bin
-       ├── special_tokens_map.json  
-       ├── tokenizer_config.json
-       └── vocab.txt 
+       ├── ...
 ```
 ------------------------------------------
 ***Types of Experiments*** 
