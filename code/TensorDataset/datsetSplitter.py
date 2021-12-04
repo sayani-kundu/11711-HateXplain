@@ -118,7 +118,7 @@ def createDatasetSplit(params):
         # print(training_data['text'])
         dataset= pd.read_pickle(filename)
 
-        # print((training_data['text'][1]))
+        print("Masking the training data...")
         for i in (training_data['text'].keys()):
           for j in range((len(training_data['text'][i]))):
             for word in training_data['text'][i][j].split(','):
