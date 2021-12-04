@@ -82,12 +82,12 @@ def encodeData(dataframe,vocab,params):
 
 def createDatasetSplit(params):
     filename=set_name(params)
-    if path.exists(filename):
-        #### REMOVE LATER ######
-        dataset=collect_data(params)
-        pass
-    else:
-        dataset=collect_data(params)
+    # if path.exists(filename):
+    #     #### REMOVE LATER ######
+    #     # dataset=collect_data(params)
+    #     pass
+    # else:
+    #     dataset=collect_data(params)
         
     if(path.exists(filename[:-7])):
         with open(filename[:-7]+'/train_data.pickle', 'rb') as f:
@@ -115,8 +115,11 @@ def createDatasetSplit(params):
             post_id_dict=json.load(fp)
 
         training_data = data_all_labelled[data_all_labelled['post_id'].isin(post_id_dict['train'])]
+        val_data = data_all_labelled[data_all_labelled['post_id'].isin(post_id_dict['val'])]
+        test_data = data_all_labelled[data_all_labelled['post_id'].isin(post_id_dict['test'])]
+
         # print(training_data['text'])
-        dataset= pd.read_pickle(filename)
+        # dataset = pd.read_pickle(filename)
 
         print("Masking the training data...")
         for i in (training_data['text'].keys()):
@@ -127,13 +130,18 @@ def createDatasetSplit(params):
 
         # print(training_data['text'])
         
+        print("Getting Training Data")
         X_train = get_training_data(training_data, params, tokenizer)
+        print("Getting val Data")
+        X_val = get_training_data(val_data, params, tokenizer)
+        print("Getting test Data")
+        X_test = get_training_data(test_data, params, tokenizer)
 
         # exit()
 
 
-        X_val=dataset[dataset['Post_id'].isin(post_id_dict['val'])]
-        X_test=dataset[dataset['Post_id'].isin(post_id_dict['test'])]
+        # X_val=dataset[dataset['Post_id'].isin(post_id_dict['val'])]
+        # X_test=dataset[dataset['Post_id'].isin(post_id_dict['test'])]
         
         if(params['bert_tokens']):
             vocab_own=None    
