@@ -228,8 +228,11 @@ def collect_data(params):
     else:
         tokenizer=None
     data_all_labelled=get_annotated_data(params)
+    # print(data_all_labelled['text'])
+    
     train_data=get_training_data(data_all_labelled,params,tokenizer)
-    return train_data
+    return train_data, data_all_labelled
+    
 
 
 

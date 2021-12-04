@@ -5,14 +5,18 @@ import sys, os
 sys.path.append('../')
 from torch.utils.data import Dataset
 import pandas as pd
-from Preprocess.dataCollect import collect_data,set_name
+from Preprocess.dataCollect import *
 from sklearn.model_selection import train_test_split
 from os import path
 from gensim.models import KeyedVectors
 import pickle
 import json
-    
-    
+from transformers import BertTokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
+masking_set = {"jews","Jews","jewish","Jewish","jew","Jew","nigga","muslim","Muslim","islam","Islam",
+               "muslims","Muslims","nigger","niggers","Nigger","Niggers","niggress","Niggress",
+               "Black","Blacks","black","blacks"}
+
 class Vocab_own():
     def __init__(self,dataframe, model):
         self.itos={}
@@ -79,8 +83,8 @@ def encodeData(dataframe,vocab,params):
 def createDatasetSplit(params):
     filename=set_name(params)
     if path.exists(filename):
-        ##### REMOVE LATER ######
-        #dataset=collect_data(params)
+        #### REMOVE LATER ######
+        dataset=collect_data(params)
         pass
     else:
         dataset=collect_data(params)
@@ -98,18 +102,36 @@ def createDatasetSplit(params):
     
         
     else:
+        data_all_labelled=get_annotated_data(params) # just get the text data here here
+    
         if(params['bert_tokens']==False):
             word2vecmodel1 = KeyedVectors.load("Data/word2vec.model")
             vector = word2vecmodel1['easy']
             assert(len(vector)==300)
 
-        dataset= pd.read_pickle(filename)
-        #X_train_dev, X_test= train_test_split(dataset, test_size=0.1, random_state=1,stratify=dataset['Label'])
-        #X_train, X_val= train_test_split(X_train_dev, test_size=0.11, random_state=1,stratify=X_train_dev['Label'])
+        
+
         with open('Data/post_id_divisions.json', 'r') as fp:
             post_id_dict=json.load(fp)
+
+        training_data = data_all_labelled[data_all_labelled['post_id'].isin(post_id_dict['train'])]
+        # print(training_data['text'])
+        dataset= pd.read_pickle(filename)
+
+        # print((training_data['text'][1]))
+        for i in (training_data['text'].keys()):
+          for j in range((len(training_data['text'][i]))):
+            for word in training_data['text'][i][j].split(','):
+              if word in masking_set:
+                training_data['text'][i][j] = training_data['text'][i][j].replace(word, tokenizer.unk_token)
+
+        # print(training_data['text'])
         
-        X_train=dataset[dataset['Post_id'].isin(post_id_dict['train'])]
+        X_train = get_training_data(training_data, params, tokenizer)
+
+        # exit()
+
+
         X_val=dataset[dataset['Post_id'].isin(post_id_dict['val'])]
         X_test=dataset[dataset['Post_id'].isin(post_id_dict['test'])]
         
@@ -141,9 +163,8 @@ def createDatasetSplit(params):
         if(params['bert_tokens']==False):
             with open(filename[:-7]+'/vocab_own.pickle', 'wb') as f:
                 pickle.dump(vocab_own, f)
-    
-    if(params['bert_tokens']==False):
-        return X_train,X_val,X_test,vocab_own
-    else:
-        return X_train,X_val,X_test
-              
+        
+        if(params['bert_tokens']==False):
+            return X_train,X_val,X_test,vocab_own
+        else:
+            return X_train,X_val,X_test
