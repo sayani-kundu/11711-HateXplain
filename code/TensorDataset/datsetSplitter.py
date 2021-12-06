@@ -172,7 +172,7 @@ def createDatasetSplit(params):
             with open(filename[:-7]+'/vocab_own.pickle', 'wb') as f:
                 pickle.dump(vocab_own, f)
         
-        if(params['bert_tokens']==False):
-            return X_train,X_val,X_test,vocab_own
-        else:
-            return X_train,X_val,X_test
+    if(params['bert_tokens']==False):
+        return X_train,X_val,X_test,vocab_own
+    else:
+        return X_train,X_val,X_test
