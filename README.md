@@ -2,7 +2,7 @@
 
 Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 
-### In this repository, we replicate (and soon build upon) the results of the following paper: 
+### In this repository, we replicate and build upon the results of the following paper: 
 
 "[HateXplain: A Benchmark Dataset for Explainable Hate Speech Detection](https://arxiv.org/abs/2012.10289)". 
 <!-- Please follow this [link] "" for the repo to the main paper.  -->
