@@ -8,6 +8,14 @@ Contributors: Arvind Subramaniam, Aryan Mehra and Sayani Kundu
 <!-- Please follow this [link] "" for the repo to the main paper.  -->
 
 
+
+```
+Branches
+└── main - Contains the code for the main branch.
+└── masked_data - Contains the code for masking the target communities in the training data.  
+└── attention_modification - Contains the code for the Lenient and Conservative Attention models.
+```
+
 ------------------------------------------
 ***Our Contributions*** 
 ------------------------------------------
